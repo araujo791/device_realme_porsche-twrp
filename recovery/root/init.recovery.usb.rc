@@ -155,3 +155,15 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mass_storage,adb && p
     symlink /config/usb_gadget/g1/functions/mass_storage.0 /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
+
+    # Update touchscreen firmware
+    write /proc/touchpanel/tp_fw_update 1
+
+    # OTG
+    chown system system /sys/class/power_supply/usb/otg_switch
+    chmod 0660 /sys/class/power_supply/usb/otg_switch
+    write /sys/class/power_supply/usb/otg_switch 1
+
+on charger
+    # Turn backlight on and switch to backlight trigger
+    write /sys/class/leds/lcd-backlight/brightness "1000"
