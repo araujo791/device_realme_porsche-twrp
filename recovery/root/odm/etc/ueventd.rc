@@ -1,0 +1,31 @@
+subsystem adf
+    devname uevent_devname
+
+#Runsheng.Pei@ANDROID.STORAGE.1207580, 2017/12/29, Add for new reserve partition
+#yanghao@PSW.KERNEL.Stability. change the owner from system to root for Android P kernel can access the partition
+/dev/block/bootdevice/by-name/oplusreserve1               0660   root     system
+/dev/block/sdf13   0660   root     system
+/dev/block/sde13   0660   root     system
+
+#Minhui.Zhu@ANDROID.ENGINEERTOOLS, 2020/8/6, Add for new reserve partition.
+/dev/block/sdf6   0660    root     system
+
+/dev/block/bootdevice/by-name/oplusreserve3               0660   root     system
+/dev/block/sdf15   0660   root     system
+/dev/block/sde15   0660   root     system
+
+#Jingxiang.Li@BSP.KERNEL.STABILITY,2020/08/25, Add for 7250R reserve3 partition
+/dev/block/by-name/opporeserve3   0660   root     system
+/dev/block/sdf8   0660   root     system
+
+#Hong.Zhang@TECH.BSP.Stability.Aging2.0, 2020/07/14, Add for aging 2.0
+#ifdef OPLUS_FEATURE_AGINGTEST
+/dev/block/bootdevice/by-name/ddr                0660           root     system
+/dev/block/sdd3                                  0660           root     system
+
+#Xuweijie1@BSP.Storage, 2021/09/26, add for new reserve partition
+/dev/block/sde3                                  0660           root     system
+/dev/block/sdf3                                  0660           root     system
+/dev/block/sdc3                                  0660           root     system
+#endif
+

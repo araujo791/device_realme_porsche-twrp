@@ -1,0 +1,55 @@
+<!--
+    Input:
+        manifest_lahaina_sake.xml
+        netutil.xml
+-->
+<manifest version="2.0" type="device" target-level="5">
+    <hal format="hidl">
+        <name>android.hardware.gatekeeper</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGatekeeper</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IGatekeeper/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.keymaster</name>
+        <transport>hwbinder</transport>
+        <fqname>@4.1::IKeymasterDevice/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.trustedui</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITrustedInput</name>
+            <instance>default</instance>
+            <instance>qtee-vm</instance>
+        </interface>
+        <interface>
+            <name>ITrustedUI</name>
+            <instance>default</instance>
+            <instance>qtee-vm</instance>
+        </interface>
+        <fqname>@1.0::ITrustedInput/default</fqname>
+        <fqname>@1.0::ITrustedInput/qtee-vm</fqname>
+        <fqname>@1.0::ITrustedUI/default</fqname>
+        <fqname>@1.0::ITrustedUI/qtee-vm</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.tui_comm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITuiComm</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::ITuiComm/default</fqname>
+    </hal>
+    <sepolicy>
+        <version>30.0</version>
+    </sepolicy>
+    <kernel target-level="5"/>
+</manifest>
