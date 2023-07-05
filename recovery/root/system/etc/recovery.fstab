@@ -13,22 +13,6 @@ vendor                                     /vendor                ext4    ro,bar
 vendor                                     /vendor                erofs   ro                                            wait,slotselect,logical,first_stage_mount
 odm                                        /odm                   ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
 odm                                        /odm                   erofs   ro                                            wait,slotselect,logical,first_stage_mount
-My_bigball                                 /my_bigball            ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
-My_bigball                                 /my_bigball            erofs   ro                                            wait,slotselect,logical,first_stage_mount
-My_carrier                                 /my_carrier            ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
-My_carrier                                 /my_carrier            erofs   ro                                            wait,slotselect,logical,first_stage_mount
-My_engineering                             /my_engineering        ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
-My_engineering                             /my_engineering        erofs   ro                                            wait,slotselect,logical,first_stage_mount
-My_heytap                                  /my_heytap             ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
-My_heytap                                  /my_heytap             erofs   ro                                            wait,slotselect,logical,first_stage_mount
-My_manifest                                /my_manifest           ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
-My_manifest                                /my_manifest           erofs   ro                                            wait,slotselect,logical,first_stage_mount
-My_product                                 /my_product            ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
-My_product                                 /my_product            erofs   ro                                            wait,slotselect,logical,first_stage_mount
-My_region                                  /my_region             ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
-My_region                                  /my_region             erofs   ro                                            wait,slotselect,logical,first_stage_mount
-My_stock                                   /my_stock              ext4    ro,barrier=1                                  wait,slotselect,logical,first_stage_mount
-My_stock                                   /my_stock              erofs   ro                                            wait,slotselect,logical,first_stage_mount
 
 /dev/block/bootdevice/by-name/metadata    /metadata      ext4     noatime,nosuid,nodev,discard              wait,formattable,first_stage_mount
 /dev/block/bootdevice/by-name/userdata    /data          f2fs     noatime,nosuid,nodev,discard,inlinecrypt,reserve_root=32768,resgid=1065,fsync_mode=nobarrier    latemount,resize,wait,check,formattable,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts:wrappedkey_v0,quota,reservedsize=128M,sysfs_path=/sys/devices/platform/soc/1d84000.ufshc,checkpoint=fs
