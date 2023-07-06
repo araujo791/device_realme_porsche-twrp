@@ -26,35 +26,47 @@
 #
 
 import /init.recovery.qcom_decrypt.rc
+#
+#on init
+#    write /sys/class/backlight/panel0-backlight/brightness 200
+#    # Create location for fs_mgr to store abbreviated output from filesystem
+#    # checker programs.
+#    mkdir /dev/fscklogs 0770 root system
+#
+#on fs
+#    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+#    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+#	# This must be under on fs, otherwise update_engine wont map the partitions and exit installation
+#    symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_a
+#    symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_b
+#    symlink /dev/block/bootdevice/by-name/oem_dycnvbk /dev/block/bootdevice/by-name/oem_dycnvbk_a
+#    symlink /dev/block/bootdevice/by-name/oem_dycnvbk /dev/block/bootdevice/by-name/oem_dycnvbk_b
+#    # Mount firmware
+#    mkdir /firmware
+#    mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
+#	write /sys/class/oplus_chg/usb/otg_switch 1
+#
+#on boot
+#    start health-hal-2-1
+#
+#on post-fs
+#    start boot-hal-1-1
+#
+#on property:twrp.modules.loaded=true
+#    # Load ADSP firmware for PMIC
+#    wait /sys/kernel/boot_adsp/boot
+#    write /sys/kernel/boot_adsp/boot 1
+#    wait /sys/class/power_supply/battery
+#    umount /firmware
 
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
-    # Create location for fs_mgr to store abbreviated output from filesystem
-    # checker programs.
-    mkdir /dev/fscklogs 0770 root system
+    setprop sys.usb.configfs 1
+
+on property:ro.boot.usbcontroller=*
+    setprop sys.usb.controller ${ro.boot.usbcontroller}
+    write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-	# This must be under on fs, otherwise update_engine wont map the partitions and exit installation
-    symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_a
-    symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_b
-    symlink /dev/block/bootdevice/by-name/oem_dycnvbk /dev/block/bootdevice/by-name/oem_dycnvbk_a
-    symlink /dev/block/bootdevice/by-name/oem_dycnvbk /dev/block/bootdevice/by-name/oem_dycnvbk_b
-    # Mount firmware
-    mkdir /firmware
-    mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
-	write /sys/class/oplus_chg/usb/otg_switch 1
-
-on boot
-    start health-hal-2-1
-
-on post-fs
-    start boot-hal-1-1
-
-on property:twrp.modules.loaded=true
-    # Load ADSP firmware for PMIC
-    wait /sys/kernel/boot_adsp/boot
-    write /sys/kernel/boot_adsp/boot 1
-    wait /sys/class/power_supply/battery
-    umount /firmware
