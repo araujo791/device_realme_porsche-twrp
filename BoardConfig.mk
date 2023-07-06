@@ -97,6 +97,19 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
+# Partitions
+
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 201326592
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
+BOARD_SUPER_PARTITION_GROUPS := qualcomm_dynamic_partitions
+BOARD_QUALCOMM_DYNAMIC_PARTITIONS_PARTITION_LIST := system system system_ext system_ext product product vendor vendor odm odm my_product my_product my_company my_company my_carrier my_carrier my_region my_region my_bigball my_bigball my_heytap my_heytap my_stock my_stock my_preload my_preload my_manifest my_manifest my_engineering my_engineering
+BOARD_QUALCOMM_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
+
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
@@ -109,8 +122,8 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # Dynamic/Logical Partitions
-BOARD_SUPER_PARTITION_SIZE := 7516192768
-BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
+#BOARD_SUPER_PARTITION_SIZE := 7516192768
+#BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 7511998464
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system \
@@ -171,6 +184,12 @@ TW_CUSTOM_BATTERY_POS := 740
 TW_CUSTOM_CLOCK_POS := 500
 TW_CUSTOM_CPU_POS := 180
 TW_FRAMERATE := 60
+# TWRP Configuration
+TW_THEME := portrait_hdpi
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_USE_TOOLBOX := true
+
 
 TW_OVERRIDE_SYSTEM_PROPS := \
      "ro.build.date.utc;ro.bootimage.build.date.utc=ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
@@ -189,7 +208,3 @@ RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 #TARGET_RECOVERY_DEVICE_MODULES += twrpdec
 #RECOVERY_BINARY_SOURCE_FILES += $(TARGET_RECOVERY_ROOT_OUT)/sbin/twrpdec
 
-# PBRP specific build flags
-PB_DISABLE_DEFAULT_TREBLE_COMP := true
-PB_DISABLE_DEFAULT_DM_VERITY := true
-PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
