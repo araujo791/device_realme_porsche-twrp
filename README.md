@@ -1,6 +1,29 @@
-# device_realme_porsche-twrp
-## Thanks SIDDK24 for original tree.
-### for orangefox.
-#### the way it is, the boot is normal, ONLY RUI, but otg is not detected yet.
-#### battery status -1
-only for REALME GT2 SNAP 888
+# ### Orangefox for Realme GT2 - RMX3311-RMX3312 - Covenant Fuchsia
+## Kernel EX01
+
+## Device specifications
+
+Basic   | Spec Sheet
+-------:|:-------------------------
+
+Qualcomm | Snapdragon 888 SM8350
+Processor clock |2.84 GHz
+Number of cores | 8
+GPU | Adreno 660
+Storage	| 128GB / 256GB / 256GB 
+RAM memory	| 8 GB, 12 GB
+
+## Features
+
+Works:
+ONLY RUI
+- [X] ADB
+- [X] Decryption
+- [X] Display
+- [X] Fasbootd
+- [X] Flashing - need more test
+- [X] MTP
+- [X] Sideload - need more test
+- [ ] USB OTG
+- [ ] Vibrator
+- [ ] Battery indicator
