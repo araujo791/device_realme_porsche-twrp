@@ -26,3 +26,6 @@ ONLY RUI
 - [ ] USB OTG
 - [ ] Vibrator
 - [ ] Battery indicator
+
+ ![Screenshot_2023-07-09-16-56-06](https://github.com/araujo791/device_realme_porsche-twrp/assets/54456417/1621c312-7a31-4663-b212-1648900d64db)
+ 
