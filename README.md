@@ -16,7 +16,7 @@ RAM memory	| 8 GB / 12 GB
 
 Works:
 ONLY RUI
-- [X] ADB
+- [X] ADB - need more test
 - [X] Decryption
 - [X] Display
 - [X] Fasbootd
