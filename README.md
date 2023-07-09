@@ -27,3 +27,10 @@ ONLY RUI
 - [ ] Vibrator
 - [ ] Battery indicator
 
+<img src="https://i.ibb.co/j4HSCzJ/Screenshot-2023-07-09-16-56-06.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://i.ibb.co/mCZGHq3/Screenshot-2023-07-09-16-56-15.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://i.ibb.co/JFCJnD9/Screenshot-2023-07-09-16-56-27.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://i.ibb.co/xGkZzHL/Screenshot-2023-07-09-16-56-58.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://i.ibb.co/hMQfZRN/Screenshot-2023-07-09-16-57-03.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://i.ibb.co/K2vnmPd/Screenshot-2023-07-09-16-57-17.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://i.ibb.co/6gbnyGT/Screenshot-2023-07-09-16-57-57.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" style="display: inline-block; margin: 0 auto; max-width: 300px">
