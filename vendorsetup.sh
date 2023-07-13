@@ -2,7 +2,7 @@
   
 #!/usr/bin/env bash
 
-FDEVICE="porsche"
+FDEVICE="ossi"
 #set -o xtrace
 
 fox_get_target_device() {
