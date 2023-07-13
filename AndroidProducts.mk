@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_porsche.mk
+    $(LOCAL_DIR)/twrp_ossi.mk
 
-COMMON_LUNCH_CHOICES := twrp_porsche-eng
+COMMON_LUNCH_CHOICES := twrp_ossi-eng
