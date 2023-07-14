@@ -23,7 +23,7 @@ ONLY RUI
 - [X] Flashing - need more test
 - [X] MTP
 - [X] Sideload - need more test
-- [ ] Permanent installation - need more test
+- [X] Permanent installation
 - [ ] USB OTG
 - [ ] Vibrator
 - [ ] Battery indicator
