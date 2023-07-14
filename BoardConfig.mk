@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-DEVICE_PATH := device/realme/ossi
+DEVICE_PATH := device/realme/porsche
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
