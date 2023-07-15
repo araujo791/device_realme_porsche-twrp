@@ -20,3 +20,4 @@ odm                                        /odm                   erofs   ro    
 
 # Removable storage
 /usb_otg        vfat    /dev/block/sdg      /dev/block/sdg1           flags=display="USB-Storage";storage;wipeingui;removable;fsflags="utf8"
+
