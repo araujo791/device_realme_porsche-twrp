@@ -19,5 +19,5 @@ odm                                        /odm                   erofs   ro    
 /dev/block/bootdevice/by-name/misc        /misc          emmc     defaults                    defaults
 
 # Removable storage
-/usb_otg        vfat    /dev/block/sdg      /dev/block/sdg1           flags=display="USB-Storage";storage;wipeingui;removable;fsflags="utf8"
+/usb_otg        vfat        /dev/block/sdg        /dev/block/sdg1        flags=display="USB-Storage";storage;wipeingui;removable;fsflags="utf8"
 
