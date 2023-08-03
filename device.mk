@@ -125,6 +125,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 
 #test
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_sideload
+#PRODUCT_PACKAGES += \
+    #update_engine \
+    #update_engine_sideload
