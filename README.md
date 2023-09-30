@@ -19,15 +19,15 @@ ONLY RUI
 - [X] ADB
 - [X] Decryption
 - [X] Display
-- [ ] Fasbootd
-- [X] Flashing - need more test
+- [X] Fasbootd
+- [X] Flashing
 - [X] MTP
-- [ ] Sideload - need more test
+- [X] Sideload
 - [X] Permanent installation
 - [X] NANO editor
-- [ ] USB OTG
-- [ ] Vibrator
-- [ ] Battery indicator
+- [X] USB OTG - needs to stabilize
+- [ ] Vibrator 
+- [X] Battery indicator - needs to stabilize
 
 <img src="https://i.ibb.co/JqtkZ18/Screenshot-2023-07-09-16-56-06.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/Jy13XVN/Screenshot-2023-07-09-16-56-15.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/JFCJnD9/Screenshot-2023-07-09-16-56-27.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/xGkZzHL/Screenshot-2023-07-09-16-56-58.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/hMQfZRN/Screenshot-2023-07-09-16-57-03.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/K2vnmPd/Screenshot-2023-07-09-16-57-17.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/6gbnyGT/Screenshot-2023-07-09-16-57-57.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200">
 
