@@ -1,27 +1,9 @@
 #
-# Copyright 2017 The Android Open Source Project
+# Copyright (C) 2022 The Android Open Source Project
+# Copyright (C) 2022 SebaUbuntu's TWRP device tree generator
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# SPDX-License-Identifier: Apache-2.0
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-# This contains the module build definitions for the hardware-specific
-# components for this device.
-#
-# As much as possible, those components should be built unconditionally,
-# with device-specific names to avoid collisions, to avoid device-specific
-# bitrot and build breakages. Building a component unconditionally does
-# *not* include it on all devices, so it is safe even with hardware-specific
-# components.
 
 DEVICE_PATH := device/realme/porsche
 
@@ -89,7 +71,6 @@ QCOM_BOARD_PLATFORMS += $(TARGET_BOARD_PLATFORM)
 # Partition Info
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_USES_PRODUCTIMAGE := true
-
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 201326592
 BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
@@ -135,6 +116,10 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 
+# Recovery Installer
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := $(DEVICE_PATH)/installer
+
 # Crypto
 TW_INCLUDE_CRYPTO := true
 BOARD_USES_METADATA_PARTITION := true
@@ -149,13 +134,16 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 # Extras
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Partitions (listed in the file) to be wiped under recovery.
+TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
+
 # Fstab
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # TWRP specific build flags
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
@@ -168,18 +156,21 @@ TW_NO_EXFAT_FUSE := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_NO_SCREEN_BLANK := true
-TW_CUSTOM_BATTERY_POS := 740
-TW_CUSTOM_CLOCK_POS := 500
-TW_CUSTOM_CPU_POS := 180
+#TW_CUSTOM_BATTERY_POS := 740
+#TW_CUSTOM_CLOCK_POS := 500
+#TW_CUSTOM_CPU_POS := 180
 TW_FRAMERATE := 60
 TW_NO_CPU_TEMP := true
 TW_HAS_EDL_MODE := true
+TW_Y_OFFSET := 104
+TW_H_OFFSET := -104
+TW_INCLUDE_FASTBOOTD := true
 
 TW_OVERRIDE_SYSTEM_PROPS := \
      "ro.build.date.utc;ro.bootimage.build.date.utc=ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
 BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(TW_LOAD_VENDOR_MODULES)
-TW_LOAD_VENDOR_MODULES := "aw8697.ko ns.ko oplus_bsp_tp_notify.ko oplus_notify.ko service-locator.ko snd_event_dlkm.ko apr_dlkm.ko oplus_chg.ko q6_notifier_dlkm.ko adsp_loader_dlkm.ko msm_drm.ko phy-qcom-ufs.ko q6_pdr_dlkm.ko"
+TW_LOAD_VENDOR_MODULES := "aw8697.ko ns.ko oplus_bsp_tp_notify.ko oplus_notify.ko service-locator.ko snd_event_dlkm.ko apr_dlkm.ko oplus_chg.ko q6_notifier_dlkm.ko adsp_loader_dlkm.ko msm_drm.ko phy-qcom-ufs.ko q6_pdr_dlkm.ko apr_dlkm.ko modules.dep modules.softdep oplus_chg.ko q6_pdr_dlkm.ko adsp_loader_dlkm.ko modules.alias modules.load msm_drm.ko q6_notifier_dlkm.ko androidboot.ko gcc-lahaina.ko oplus_bsp_tp_notify.ko qbt_handler.ko rpmhpd.ko aw8697.ko gcc-shima.ko oplus_charger_present.ko qcom-arm-smmu-mod.ko rpmh-regulator.ko boot_mode.ko gcc-yupik.ko oplus_ftm_mode.ko qcom_glink_native.ko sdhci-msm.ko buildvariant.ko hwkm.ko oplus_notify.ko qcom_glink_smem.ko secure_buffer.ko cdt_integrity.ko icc-bcm-voter.ko oplus_project.ko qcom-pdc.ko service-locator.ko clk-dummy.ko icc-rpmh.ko phy-qcom-ufs.ko qcom_rpmh.ko simcardnum.ko clk-qcom.ko iommu-logger.ko phy-qcom-ufs-qmp-v4-lahaina.ko _qcom_scm.ko smem.ko clk-rpmh.ko memory_dump_v2.ko phy-qcom-ufs-qmp-v4-yupik.ko qmi_helpers.ko snd_event_dlkm.ko cmd-db.ko modules.alias phy-qcom-ufs-qrbtc-sdm845.ko qnoc-lahaina.ko stub-regulator.ko cqhci-crypto.ko modules.dep pinctrl-lahaina.ko qnoc-qos.ko subsystem_restart.ko cqhci-crypto-qti.ko modules.load pinctrl-msm.ko qnoc-shima.ko ufshcd-crypto-qti.ko cqhci.ko modules.softdep pinctrl-shima.ko qnoc-yupik.ko ufs-qcom.ko crypto-qti-common.ko  msm-poweroff.ko pinctrl-yupik.ko qpnp-power-on.ko crypto-qti-hwkm.ko ns.ko proxy-consumer.ko refgen.ko"
 
 # TWRP Debug Flags
 #TWRP_EVENT_LOGGING := true

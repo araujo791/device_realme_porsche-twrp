@@ -37,9 +37,14 @@
 firmware_directories /mnt/vendor/persist/copy/ /mnt/vendor/persist/ /odm/etc/wifi/ /vendor/firmware_mnt/image/
 # endif /* OPLUS_FEATURE_WIFI_BDF */
 
+# For OTG and Battery
+/config/usb_gadget/g1/configs              0666   system       system
+/sys/class/power_supply/battery            0666   system       system
+
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0660   system     oem_2901
 /dev/mhi_*_pipe_4         0660   system     system
+
 
 /dev/genlock              0666   system     system
 /dev/wlan                 0660   wifi       wifi

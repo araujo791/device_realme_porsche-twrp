@@ -17,4 +17,7 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_porsche.mk
 
-COMMON_LUNCH_CHOICES := twrp_porsche-eng
+COMMON_LUNCH_CHOICES := \
+    twrp_porsche-user \
+    twrp_porsche-userdebug \
+    twrp_porsche-eng

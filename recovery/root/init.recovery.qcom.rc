@@ -27,34 +27,57 @@
 
 import /init.recovery.qcom_decrypt.rc
 
+on early-init
+    write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
+
+
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
-    # Create location for fs_mgr to store abbreviated output from filesystem
-    # checker programs.
-    mkdir /dev/fscklogs 0770 root system
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-	# This must be under on fs, otherwise update_engine wont map the partitions and exit installation
+
+
+# This must be under on fs, otherwise update_engine wont map the partitions and exit installation
     symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_a
     symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_b
     symlink /dev/block/bootdevice/by-name/oem_dycnvbk /dev/block/bootdevice/by-name/oem_dycnvbk_a
     symlink /dev/block/bootdevice/by-name/oem_dycnvbk /dev/block/bootdevice/by-name/oem_dycnvbk_b
-    # Mount firmware
+
+# Load ADSP firmware for PMIC
     mkdir /firmware
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
-	write /sys/class/oplus_chg/usb/otg_switch 1
-
-on boot
-    start health-hal-2-1
 
 on post-fs
     start boot-hal-1-1
+#
 
-on property:twrp.modules.loaded=true
-    # Load ADSP firmware for PMIC
+    on property:twrp.modules.loaded=true && property:dev.mnt.blk.firmware=*
+# Load ADSP firmware for PMIC
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
+    wait /sys/class/oplus_chg/usb/otg_switch
+    write /sys/class/oplus_chg/usb/otg_switch 1
+    start health-hal-2-1
+
+    on property:ro.twrp.fastbootd=1
+# Load ADSP firmware for PMIC
+    wait /sys/kernel/boot_adsp/boot
+    write /sys/kernel/boot_adsp/boot 1
+    wait /sys/class/power_supply/battery
+    start health-hal-2-1
     umount /firmware
+
+on property:ro.boot.prjname=*
+    start load_oplus_props
+
+service load_oplus_props /system/bin/load_oplus_props.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+

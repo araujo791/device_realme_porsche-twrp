@@ -1,7 +1,10 @@
+
 # Storage
 external_storage.projid.enabled=1
 external_storage.casefold.enabled=1
 external_storage.sdcardfs.enabled=0
+ro.boot.dynamic_partitions=true
+persist.sys.isUsbOtgEnabled=true
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
@@ -17,3 +20,9 @@ vendor.usb.use_ffs_mtp=1
 
 # Battery
 ro.charger.enable_suspend=1
+
+# Build
+ro.display.series=Realme GT2 Covenant
+ro.vendor.oplus.market.name=Covenant Fuchsia GT2
+
+ro.adb.secure=0
