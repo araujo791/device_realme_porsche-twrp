@@ -27,6 +27,12 @@
 
 import /init.recovery.qcom_decrypt.rc
 
+# Workaround to start battery nodes at boot
+on boot
+	chown system system /sys/class/power_supply/battery
+	chmod 0660 /sys/class/power_supply/battery
+	start health-hal-2-1
+	
 on early-init
     write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
 
