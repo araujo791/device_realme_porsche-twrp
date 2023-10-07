@@ -1,4 +1,15 @@
 # ### Orangefox for Realme GT2 - RMX3311-RMX3312 - Covenant Fuchsia
+
+## special thanks to the friends who helped solve the battery and otg problems
+@cykeek
+@think_thought
+@Prajwal_Beast_00
+@yograjfire18
+@kushagrasinghbisen
+@JaiShreeRam_Uxtrom
+@Thalaiva698
+@Zeus7734
+
 ## Kernel EX01
 
 ## Device specifications
@@ -25,11 +36,11 @@ ONLY RUI
 - [X] Sideload
 - [X] Permanent installation
 - [X] NANO editor
-- [X] USB OTG - needs to stabilize
-- [ ] Vibrator - Ignored for now
-- [X] Battery indicator - needs to stabilize
+- [X] USB OTG 
+- [ ] Vibrator - Ignored
+- [X] Battery indicator
 
-<img src="https://i.ibb.co/JqtkZ18/Screenshot-2023-07-09-16-56-06.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/Jy13XVN/Screenshot-2023-07-09-16-56-15.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/JFCJnD9/Screenshot-2023-07-09-16-56-27.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/xGkZzHL/Screenshot-2023-07-09-16-56-58.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/hMQfZRN/Screenshot-2023-07-09-16-57-03.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/K2vnmPd/Screenshot-2023-07-09-16-57-17.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/6gbnyGT/Screenshot-2023-07-09-16-57-57.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200">
+<img src="https://i.ibb.co/vQ1KFnF/Screenshot-2023-10-07-02-13-07.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/7n76r7m/Screenshot-2023-10-07-02-13-47.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/cC0xMFt/Screenshot-2023-10-07-02-13-55.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/Mk0F0F1/Screenshot-2023-10-07-02-14-04.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/rG5MyxG/Screenshot-2023-10-07-02-14-24.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/yQPwWch/Screenshot-2023-10-07-02-15-22.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200"> - <img src="https://i.ibb.co/rvswmTD/Screenshot-2023-10-07-02-15-39.png" alt="Covenant_Fuchsia" title="Covenant_Fuchsia" height="200">
 
 For Install: FOR YOUR RISK!
 1. flash the magisk patched boot image & boot your phone
