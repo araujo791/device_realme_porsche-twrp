@@ -13,7 +13,7 @@
 ## Kernel
 EX01-1411
 
-## magisk
+## Magisk
 26.3
 
 ## Device specifications
