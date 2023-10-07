@@ -1,14 +1,14 @@
 # ### Orangefox for Realme GT2 - RMX3311-RMX3312 - Covenant Fuchsia
 
 ## special thanks to the friends who helped solve the battery and otg problems
-@cykeek
-@think_thought
-@Prajwal_Beast_00
-@yograjfire18
-@kushagrasinghbisen
-@JaiShreeRam_Uxtrom
-@Thalaiva698
-@Zeus7734
+ - @cykeek
+ - @think_thought
+ - @Prajwal_Beast_00
+ - @yograjfire18
+ - @kushagrasinghbisen
+ - @JaiShreeRam_Uxtrom
+ - @Thalaiva698
+ - @Zeus7734
 
 ## Kernel EX01
 
