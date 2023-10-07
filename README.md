@@ -10,7 +10,11 @@
  - @Thalaiva698
  - @Zeus7734
 
-## Kernel EX01
+## Kernel
+EX01-1411
+
+## magisk
+26.3
 
 ## Device specifications
 
